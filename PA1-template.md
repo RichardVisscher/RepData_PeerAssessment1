@@ -37,26 +37,6 @@ act$time <- as.factor(act$time)
 
 ```r
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:lubridate':
-## 
-##     intersect, setdiff, union
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 acthist <- filter(act, !is.na(act$steps))
 acthist <- acthist %>% group_by(date) %>% summarise(sum = sum(steps))
 ```
@@ -224,16 +204,5 @@ plot(daysplot)
 ```
 
 ![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png) 
-
-```r
-summarise(actday, max = max(mean))
-```
-
-```
-## Source: local data frame [1 x 1]
-## 
-##        max
-## 1 206.1698
-```
 
 #### In the weekends there is a slower start from 6 to 8, a lower peak between 8 and 10, more activity between 10 and 18, less activity between 18 and 20 and a peak in activity between 20 and 22.

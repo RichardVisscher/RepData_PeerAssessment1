@@ -172,7 +172,6 @@ daysplot <- ggplot(actw, aes(ts, mean)) + geom_line() + xlab("Time (hours)") + y
 daysplot <- daysplot + scale_x_datetime(breaks = date_breaks("2 hour"), minor_breaks=date_breaks("1 hour"), labels=date_format("%H"))
 daysplot <- daysplot + facet_grid(day~.)
 plot(daysplot)
-summarise(actday, max = max(mean))
 ```
 
 #### In the weekends there is a slower start from 6 to 8, a lower peak between 8 and 10, more activity between 10 and 18, less activity between 18 and 20 and a peak in activity between 20 and 22.
